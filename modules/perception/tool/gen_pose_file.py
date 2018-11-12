@@ -21,10 +21,11 @@ import os
 
 def main(argv):
     if len(argv) < 3:
-        print("The number of input parameter should be empty or only one.")
+        _warning_msg = "The number of input parameter should be empty or only one: \n\t{}"
+        print(_warning_msg.format(argv))
 
     # Use the default PCD file directory if that is not specified.
-    pcd_dir = argv[1] if len(argv) == 2 or "/apollo/data/pcd"
+    pcd_dir = argv[1] if len(argv) == 2 else "/apollo/data/pcd"
     # Pose file directory
     pose_dir = os.path.join(os.path.dirname(pcd_dir), "pose")
     if not os.path.exists(pose_dir):
