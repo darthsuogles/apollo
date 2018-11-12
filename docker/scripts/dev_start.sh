@@ -270,6 +270,7 @@ function main(){
         ${MAP_VOLUME_CONF} \
         --volumes-from ${LOCALIZATION_VOLUME} \
         --volumes-from ${YOLO3D_VOLUME} \
+	--volume /workspace/datasets:/datasets \
         -e DISPLAY=$display \
         -e DOCKER_USER=$USER \
         -e USER=$USER \
